@@ -1,0 +1,36 @@
+C:/Aplicaciones/TypeScript/PrimeraAplicacion
+
+tsc nombreArchivo.ts --> compila y convierte a Javascript el archivo
+node funciones.js --> Muestra en consola los resultados del archivo js
+tsc --init --> Crea el archivo de configuración tsconfig.json y 
+me permite indicar que mi proyecto va ser de typo TypeScript
+
+*************************************************************
+Cambios en el archivo tsconfig.json:
+ "target": "ES2018",  --> Versión de javascript 
+ "rootDir": "./src",  --> Donde se almacenan los archivo fuentes(.ts)
+ "outDir": "./dist",  --> Donde se generarán los archivo js
+ 
+ A partir de esta configuración podemos usar tsc para compilar
+ todos los archivos dentro de la carpeta src y generarlos dentro
+ de la carpeta dist
+ 
+ Comando: tsc --watch   --> nos permite compilar de forma automática
+ todos los archivos que se encuentren en la carpeta src y crear
+ de forma automática los archivos js dentro de la carpeta dist
+  
+ *************************************************************
+ Depurar nuestro código:
+ 1.  Quitar el comentario del archivo de configuración:
+  "sourceMap": true,
+  
+ 2. Elegir Debug y seleccionar create launch.json file y
+ elegir node.js
+ 
+ 3. Agregar línea:"preLaunchTask": "tsc: build - tsconfig.json",
+ en archivo launch.json
+ 
+ 4. Dar clic en el ícono Play (color verde) para iniciar la depuración
+ 
+ 5. Puede avanzar con F10 línea por línea en su código.
+ *************************************************************
